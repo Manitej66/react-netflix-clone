@@ -46,10 +46,11 @@ const Detailed = () => {
   }
 
   if (error) {
-    return;
-    <div style={{ marginTop: "70vh", padding: 20 }}>
-      <p>{error}</p>
-    </div>;
+    return (
+      <div style={{ marginTop: "70vh", padding: 20 }}>
+        <p>{error}</p>
+      </div>
+    );
   }
 
   return (
