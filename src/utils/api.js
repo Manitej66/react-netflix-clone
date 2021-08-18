@@ -1,4 +1,4 @@
-const baseUrl = "https://api.themoviedb.org/3";
+export const baseUrl = "https://api.themoviedb.org/3";
 const APIKey = import.meta.env.VITE_API3_KEY;
 
 const requests = {

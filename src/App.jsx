@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Detailed from "./components/Detailed";
 import Home from "./components/Home";
 import Latest from "./components/Latest";
 import Movies from "./components/Movies";
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <div style={{ marginTop: 45 }}>
         <Route exact path="/" component={Home} />
+        <Route exact path="/movie/:id" component={Detailed} />
         <Route exact path="/tv" component={TV} />
         <Route exact path="/movies" component={Movies} />
         <Route exact path="/latest" component={Latest} />

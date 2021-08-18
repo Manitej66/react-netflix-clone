@@ -147,3 +147,10 @@ body {
     background-position: 315px 0, 0 0, 0 190px, 50px 195px;
   }
 }
+
+/* detailed page */
+
+.info-bg {
+  width: 100%;
+  height: 100%;
+}

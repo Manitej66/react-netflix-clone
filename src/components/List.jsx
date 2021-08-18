@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Placeholder from "../utils/Placeholder";
 const base = "https://image.tmdb.org/t/p/original/";
 
@@ -26,24 +27,26 @@ const List = ({ data, name }) => {
       ) : (
         <div className="row">
           {movies.map((movie) => (
-            <div key={movie.id}>
-              {/* <div className="skeleton-image"></div>
+            <Link to={`/movie/${movie.id}`} key={movie.id}>
+              <div key={movie.id}>
+                {/* <div className="skeleton-image"></div>
               <div className="skeleton-title"></div> */}
-              <img
-                className={loaded ? "row_item" : "skeleton-image"}
-                loading="lazy"
-                onLoad={() => {
-                  setLoaded(true);
-                }}
-                src={base + movie.poster_path}
-                alt={movie.title}
-              />
+                <img
+                  className={loaded ? "row_item" : "skeleton-image"}
+                  loading="lazy"
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
+                  src={base + movie.poster_path}
+                  alt={movie.title}
+                />
 
-              <p className="title" style={{ paddingTop: 3, margin: 0 }}>
-                {movie.title || movie.name}
-              </p>
-              <p className="desc">{movie.overview}</p>
-            </div>
+                <p className="title" style={{ paddingTop: 3, margin: 0 }}>
+                  {movie.title || movie.name}
+                </p>
+                <p className="desc">{movie.overview}</p>
+              </div>
+            </Link>
           ))}
         </div>
       )}
