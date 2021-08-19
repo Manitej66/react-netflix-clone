@@ -27,10 +27,12 @@ const List = ({ data, name }) => {
       ) : (
         <div className="row">
           {movies.map((movie) => (
-            <Link to={`/movie/${movie.id}`} key={movie.id}>
+            <Link
+              to={`/movie/${movie.id}`}
+              style={{ textDecoration: "none" }}
+              key={movie.id}
+            >
               <div key={movie.id}>
-                {/* <div className="skeleton-image"></div>
-              <div className="skeleton-title"></div> */}
                 <img
                   className={loaded ? "row_item" : "skeleton-image"}
                   loading="lazy"
